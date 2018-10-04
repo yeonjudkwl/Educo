@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+/* Fixed sidenav, full height */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#EFE6E0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #EFE6E0;
+	margin-left: 20px;
+	margin-top: 5px;
+	margin-bottom: 8px;
+}
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #2F4661;
+  background-color:#F9D3A5;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.button:active {
+  background-color: #F9D3A5;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #2F4661;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.btn:active {
+  background-color: #303846;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+.heading1, .box_div, .table1, .table2, .table3, .table4{
+	margin-bottom : 10px;
+}
+.table_td{
+	margin-right: 15px;
+}
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+#text {
+	border-right : 2px solid #ddd;
+	width : 600px;
+	height : 550px;
+	background-color: #303846;
+	color : #fff;
+	font-size: 18px;
+}
+#run {
+	width : 700px;
+	height : 550px;
+	background-color: #303846;
+	color : #fff;
+}
+#guide {
+	height : 186px;
+	background-color: #2F4661;
+	color : #fff;
+	padding-left : 50px;
+}
+.body{
+	margin-left: 200px;
+}
+a {
+    text-decoration: none;
+}
+.btn_next {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+	border-radius: 15px;
+}
+
+
+.next {
+    background-color: #2F4661;
+    color: white;
+    border: 2px solid #fff;
+}
+
+.next:hover {
+    background-color: #fff;
+    color: #2F4661;
+}
+.btn_next_fix{
+	padding-right: 20px;
+	float: right;
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+ <div>
+	<button class="btn_drop button">box</button>
+	  <div class="dropdown-container">
+		<div class="box_block">
+			<div class="box_div">
+				<button class="btn"id="div">div</button>
+				<button class="btn" id="div1">/div</button>
+			</div>
+		</div>
+	  </div>
+ </div>
+   <button class="btn_drop button">heading</button>
+  <div class="dropdown-container">
+	<div class="heading1">
+		<button class="btn" id="h2">h2</button>
+		<button class="btn" id="h21">/h2</button>
+	</div>
+  </div>
+ <div>
+  <button class="btn_drop button">table</button>
+  <div class="dropdown-container">
+	<div class="table">
+		<div class="table1">
+			<span class="table_tag">
+				<button class="btn" id="table">table</button>
+				<button class="btn" id="table1">/table</button>
+			</span>
+		</div>
+		<div class="table2">
+			<span class="table_tr">
+				<button class="btn" id="tr">tr</button>
+				<button class="btn" id="tr1">/tr</button><br>
+			</span>
+		</div>
+		<div class="table3">
+			<button class="btn" id="th">th</button>
+			<button class="btn" id="th1">/th</button><br>
+		</div>
+		<div class="table4">
+			<span class="table_td">
+				<button class="btn"id="td">td</button>
+				<button class="btn" id="td1">/td</button>
+			</span>
+				<button class="btn"id="td2">td</button>
+				<button class="btn" id="td21">/td</button><br>
+		</div>
+	</div>
+  </div>
+  </div>
+  
+  <button class="btn_drop button">img</button>
+  <div class="dropdown-container">
+    <button class="btn btn_img" id="img">img</button>
+  </div>
+ <div>
+  <button class="btn_drop button">text</button>
+  <div class="dropdown-container">
+	<div class="text">
+		<div class="text1">
+		<span class="text_br">
+			<button class="btn" id="br">br</button>
+		</span>
+		</div>
+	 </div>
+  </div>
+ </div>
+ 
+</div>
+ 
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("btn_drop");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+
+<div class="body container">
+	<table>
+		<tr>
+			<td id="text">
+				<p id="text_div"></p>
+					<span>&nbsp;&nbsp;</span><span id="text_h2"></span>
+					<span id="text_h21"></span><br>
+					<span>&nbsp;&nbsp;</span><span id="text_table"></span><br>
+						<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="text_tr"></span><br>
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="text_th"></span>
+							<span id="text_th1"></span><br>
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="text_td"></span>
+							<span id="text_td1"></span><br>
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="text_td2"></span>
+							<span id="text_td21"></span><br>
+						<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="text_tr1"></span><br>
+					<span>&nbsp;&nbsp;</span><span id="text_table1"></span><br>
+				<p id="text_div1"></p>
+			</td>
+			
+			<td id="run">
+				<div id="run_div">
+					<p id="run_h2"></p>
+						<div id="run_table">
+							<div id="run_th" style = "float:left"></div>
+							<div id="run_td" style = "float:left"></div>
+							<div id="run_td2" style = "float:left; width: 70%;"></div>
+						</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" id="guide"> 
+				<span id="guide_div"></span><br>
+				<span id="guide_h2"></span><br>
+				<span id="guide_table"></span><br>
+				<span id="guide_tr"></span><br>
+				<span id="guide_th"></span><br>
+				<span id="guide_td"></span><br>
+				<span id="guide_img"></span><br>
+				<span id="guide_br"></span>
+				<span class="btn_next_fix">
+				<a href="http://widit.knu.ac.kr/~hyj9785/ithw/video.html"><button class="btn_next next"><b>NEXT</b></button></a>
+				</span>
+			</td>
+		</tr>
+	</table>
+</div>
+<style>
+	.table_div {
+		border: 1px solid #fff;
+		background-color: #fff;
+		color: #2F4661;
+		width : 500px;
+		height : 300px;
+		margin-left: 50px;
+		padding : 10px;
+	}
+	.table_border{
+		border: 1px solid #2F4661;
+		width : 480px;
+		height : 230px;
+	}
+	.table_th{
+		border-right : 1px solid #2F4661;
+		text-align : center;
+		width : 48px;
+		height : 230px;
+	}
+	.table_td1{
+    border-right : 1px solid #2F4661;
+    text-align : center;
+    width : 80px;
+    height : 230px;
+  }
+    .table_td2{
+    text-align : center;
+    width : 352px;
+    height : 230px;
+  }
+</style>
+
+<script>
+$(document).ready(function(){
+	$("#div").click(function(){
+		$("#text_div").text("<div class='table_container'>");
+		$("#run_div").addClass("table_div");
+		$("#guide_div").text("<div>는 내용을 담을 수 있는 상자입니다. table_container라는 이름의 상자를 만들어주세요.");
+    });
+	$("#div1").click(function(){
+		$("#text_div1").text("</div>");
+    });
+	$("#h2").click(function(){
+		$("#text_h2").text("<h2>KAKAO CHARACTER");
+		$("#run_h2").html("<h2>KAKAO CHARACTER</h2>");
+		$("#guide_h2").text("<h2>를 이용하여 소제목을 적어주세요.");
+    });
+	$("#h21").click(function(){
+		$("#text_h21").text("</h2>");
+    });
+	$("#table").click(function(){
+		$("#text_table").text("<table>");
+		$("#run_table").addClass("table_border");
+		$("#guide_table").text("<table>테그는 표 전체를 감싸는 부분입니다.");
+    });
+	$("#table1").click(function(){
+		$("#text_table1").text("</table>");
+    });
+	$("#tr").click(function(){
+		$("#text_tr").text("<tr>");
+		$("#guide_tr").text("<tr>테그는 표의 '행'입니다.");
+    });
+	$("#tr1").click(function(){
+		$("#text_tr1").text("</tr>");
+    });
+	$("#th").click(function(){
+		$("#text_th").text("<th>라이언");
+		$("#run_th").html("<th><div class='table_th'>라이언</div></th>");
+		$("#guide_th").text("<th>를 이용하여 '행'의 이름을 설정하세요.");
+    });
+	$("#th1").click(function(){
+		$("#text_th1").text("</th>");
+    });
+	$("#td").click(function(){
+		$("#text_td").text("<td>");
+		$("#run_td").html("<td><div class='table_td1'></div></td>");
+		$("#guide_td").text("<td>를 이용하여 각 행의 '열'을 입력하세요.");
+    });
+	$("#td1").click(function(){
+		$("#text_td1").text("</td>");
+    });
+	$("#td2").click(function(){
+		$("#text_td2").text("<td>갈기가 없는게 콤플렉스인 수사자 곰으로 알고 있는 사람이 많지만... 사실은 사자!");
+		$("#run_td2").html("갈기가 없는게 콤플렉스인 수사자 곰으로 알고 있는 사람이 많지만... 사실은 사자!");
+    });
+	$("#td21").click(function(){
+		$("#text_td21").text("</td>");
+    });
+	$("#img").click(function(){
+		$("#text_td").text("<td><img src='ryan.gif'>");
+		$("#run_td").html("<td><div class='table_td1'><img src='ryan.gif' width='90px;'></div></td>");
+		$("#guide_img").text("<img>를 이용하여 사진을 추가하세요.");
+    });
+	$("#br").click(function(){
+		$("#text_td2").text("<td>갈기가 없는게 콤플렉스인 수사자 <br>곰으로 알고 있는 사람이 많지만... <br>사실은 사자!");
+		$("#run_td2").html("<td><div class='table_td2'>갈기가 없는게 콤플렉스인 수사자 <br>곰으로 알고 있는 사람이 많지만... <br>사실은 사자!</div></td>");
+		$("#guide_br").text("<br>를 이용하여 text의 줄을 바꾸세요.");
+    });
+	
+});
+</script>
+</body>
+</html> 

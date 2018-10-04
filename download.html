@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+/* Fixed sidenav, full height */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#EFE6E0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #EFE6E0;
+	margin-left: 20px;
+	margin-top: 5px;
+	margin-bottom: 8px;
+}
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #2F4661;
+  background-color:#F9D3A5;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.button:active {
+  background-color: #F9D3A5;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #2F4661;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.btn:active {
+  background-color: #303846;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+#text {
+	border-right : 2px solid #ddd;
+	width : 1000px;
+	height : 550px;
+	background-color: #303846;
+	color : #fff;
+}
+#run {
+	width : 1000px;
+	height : 550px;
+	background-color: #303846;
+	color : #fff;
+}
+#guide {
+	height : 186px;
+	background-color: #2F4661;
+	color : #fff;
+	padding-left : 50px;
+}
+.body{
+	margin-left: 200px;
+}
+a {
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+	<a href="http://widit.knu.ac.kr/~hyj9785/ithw/intro.html">
+	<button class="btn_drop button">다시해보기</button>
+	</a><br>
+	<a href="http://widit.knu.ac.kr/~hyj9785/ithw/head_css.html">
+	<button class="btn_drop button">CSS 배우기</button>
+	</a>
+	<a href="http://widit.knu.ac.kr/~hyj9785/ithw/guide.html">
+	<button class="btn_drop button">HOME</button>
+	</a>
+</div>
+
+<div class="body container">
+	<table>
+		<tr>
+		<td>
+<textarea rows="80" cols="100">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+<style>
+.head_container {
+	border: 1px solid #fff;
+	background-color : #FFD801;
+	color: white;
+	width : 510px;
+	height : 100px;
+	margin-left: 50px;
+	padding : 10px;
+	text-align: center;
+}
+.list_container, .video_container {
+		border: 1px solid #fff;
+		background-color: #fff;
+		color: #2F4661;
+		width : 510px;
+		height : 250px;
+		margin-left: 50px;
+		padding : 10px;
+	}
+.table_container{
+	border: 1px solid #fff;
+	background-color: #fff;
+	color: #2F4661;
+	width : 510px;
+	height : 200px;
+	margin-left: 50px;
+	padding : 10px;
+}
+.video_container {
+		border: 1px solid #fff;
+		background-color: #fff;
+		color: #2F4661;
+		width : 510px;
+		height : 350px;
+		margin-left: 50px;
+		padding : 10px;
+	}
+a:visited {
+    text-decoration: none;
+	color: #2F4661;
+}
+a:hover {
+	text-decoration: none;
+    color: gray;
+}
+.up{
+	padding-left:100px;
+	font-size: 25px;
+}
+.footer_container {
+	background-color: #ddd;
+	color: black;
+	width : 512px;
+	height : 40px;
+	margin-left: 50px;
+	padding : 10px;
+}
+</style>
+</head>
+<body>
+	<div class="head_container">
+		<h1>KAKAO FRIENDs</h1>
+		<p>카카오 프렌즈 페이지 입니다.</p>
+	</div>
+	<div class="list_container">
+	 <hr>
+		<h2>KAKAO INTRODUCTION</h2>
+		<p>카카오톡과 카카오스토리에서 사용할 수 있는 이모티콘 캐릭터들의 이름이며 사실상 카카오의 마스코트들이다. </p>
+		<h5>-캐릭터 리스트-</h5>
+		<ul>
+			<li><b>RYAN</b>입니다.</li>
+			<li><i>APEACH</i>입니다.</li>
+			<li>MUZI&CON입니다.</li>
+		</ul>
+	</div>
+	<div class="table_container">
+	 <hr>
+		<h2>KAKAO CHARACTER</h2>
+		<table>
+			<tr>
+				<th>라이언</th>
+				<td><img src="ryan.gif" width="100px"></td>
+				<td>갈기가 없는게 콤플렉스인 수사자<br> 곰으로 알고 있는 사람이 많지만...<br>사실은 사자!</td>
+			</tr>
+		</table>
+	</div>
+	<div class="video_container">
+	 <hr>
+		<h2>KAKAO PROMOTE</h2>
+		<p=>카카오 프렌즈 크리스마스 스페셜 에디션</p>
+		<video width="350px" controls>
+			<source src="kakao_promote.mp4" type="video/mp4">
+		</video>
+		<span class='up'><b><a href='#'>위로</a></b></span>
+	</div>
+	<footer>
+		<div class="footer_container">
+		 <footer>
+		   Copyright © EduCo.
+		   <br> Recommend Chrome for this page.
+		 </footer>
+		</div>
+	</footer>
+</body>
+</html>
+</textarea>
+			</td>
+			
+			<td id="run">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+<style>
+.head_container {
+	border: 1px solid #fff;
+	background-color : #FFD801;
+	color: white;
+	width : 510px;
+	height : 100px;
+	margin-left: 50px;
+	padding : 10px;
+	text-align: center;
+}
+.list_container, .video_container {
+		border: 1px solid #fff;
+		background-color: #fff;
+		color: #2F4661;
+		width : 510px;
+		height : 250px;
+		margin-left: 50px;
+		padding : 10px;
+	}
+.table_container{
+	border: 1px solid #fff;
+	background-color: #fff;
+	color: #2F4661;
+	width : 510px;
+	height : 200px;
+	margin-left: 50px;
+	padding : 10px;
+}
+.video_container {
+		border: 1px solid #fff;
+		background-color: #fff;
+		color: #2F4661;
+		width : 510px;
+		height : 350px;
+		margin-left: 50px;
+		padding : 10px;
+	}
+a:link {
+    text-decoration: none;
+	color: #2F4661;
+}
+a:visited {
+    text-decoration: none;
+	color: #2F4661;
+}
+a:hover {
+	text-decoration: none;
+    color: gray;
+}
+.up{
+	padding-left:100px;
+	font-size: 25px;
+}
+.footer_container {
+	background-color: #ddd;
+	color: black;
+	width : 512px;
+	height : 40px;
+	margin-left: 50px;
+	padding : 10px;
+}
+</style>
+</head>
+<body>
+	
+	<div class="head_container">
+		<h1>KAKAO FRIENDs</h1>
+		<p>카카오 프렌즈 페이지 입니다.</p>
+	</div>
+	<div class="list_container">
+	<hr>
+		<h2>KAKAO INTRODUCTION</h2>
+		<p>카카오톡과 카카오스토리에서 사용할 수 있는 이모티콘 캐릭터들의 이름이며 사실상 카카오의 마스코트들이다. </p>
+		<h5>-캐릭터 리스트-</h5>
+		<ul>
+			<li><b>RYAN</b>입니다.</li>
+			<li><i>APEACH</i>입니다.</li>
+			<li>MUZI&CON입니다.</li>
+		</ul>
+	</div>
+	<div class="table_container">
+	<hr>
+		<h2>KAKAO CHARACTER</h2>
+		<table>
+			<tr>
+				<th>라이언</th>
+				<td><img src="ryan.gif" width="100px"></td>
+				<td>갈기가 없는게 콤플렉스인 수사자<br> 곰으로 알고 있는 사람이 많지만...<br>사실은 사자!</td>
+			</tr>
+		</table>
+	</div>
+	<div class="video_container">
+	<hr>
+		<h2>KAKAO PROMOTE</h2>
+		<p>카카오 프렌즈 크리스마스 스페셜 에디션</p>
+		<video width="350px" controls>
+			<source src="kakao_promote.mp4" type="video/mp4">
+		</video>
+		<span class='up'><b><a href='#'>위로</a></b></span>
+	</div>
+	<footer>
+		<div class="footer_container">
+		 <footer>
+		   Copyright © EduCo.
+		   <br> Recommend Chrome for this page.
+		 </footer>
+		</div>
+	</footer>
+</body>
+</html>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" id="guide"> 
+				<p>완성한 코드를 드래그하여 복사할 수 있습니다. 원하는 스타일로 고쳐보세요~!</p>
+				<p>다시해보기 버튼을 눌러 처음부터 다시 도전할 수 있습니다.</p>
+				<p>메인화면으로 돌아가려면 home버튼을 눌러주세요.</p>
+			</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html> 

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+/* Fixed sidenav, full height */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#EFE6E0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #EFE6E0;
+	margin-left: 20px;
+	margin-top: 5px;
+	margin-bottom: 8px;
+}
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #2F4661;
+  background-color:#F9D3A5;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.button:active {
+  background-color: #F9D3A5;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #2F4661;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.btn:active {
+  background-color: #303846;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+#text {
+	border-right : 2px solid #ddd;
+	width : 1000px;
+	height : 550px;
+	background-color: #303846;
+	color : #fff;
+	font-size: 20px;
+}
+#run {
+	width : 1000px;
+	height : 550px;
+	background-color: #303846;
+	color : #fff;
+}
+#guide {
+	height : 186px;
+	background-color: #2F4661;
+	color : #fff;
+	padding-left : 50px;
+}
+.body{
+	margin-left: 200px;
+}
+a {
+    text-decoration: none;
+}
+.btn_next {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+	border-radius: 15px;
+}
+
+
+.next {
+    background-color: #2F4661;
+    color: white;
+    border: 2px solid #fff;
+}
+
+.next:hover {
+    background-color: #fff;
+    color: #2F4661;
+}
+.btn_next_fix{
+	padding-right: 20px;
+	float: right;
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <div>
+	<button class="btn_drop button">box</button>
+	  <div class="dropdown-container">
+		<div class="box_div">
+			<button class="btn"id="div">div</button>
+			<button class="btn" id="div1">/div</button>
+		</div>
+	  </div>
+  </div>
+  <button class="btn_drop button">footer</button>
+  <div class="dropdown-container">
+    <button class="btn" id="footer">footer</button>
+    <button class="btn" id="footer1">/footer</button>
+  </div>
+  <div>
+  <button class="btn_drop button">text</button>
+  <div class="dropdown-container">
+	<div class="text">
+	 <span class="text_br">
+		<button class="btn" id="br">br</button>
+	 </span>
+	</div>
+  </div>
+  </div>
+ </div>
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("btn_drop");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+
+<div class="body container">
+	<table>
+		<tr>
+			<td id="text">
+				<p id="text_div"></p>
+				<span>&nbsp;&nbsp;</span><span id="text_footer"></span><br>
+				<span>&nbsp;&nbsp;</span><span id="text_footer1"></span>
+				<p id="text_div1"></p>
+			</td>
+			
+			<td id="run">
+				<div id="run_div">
+				<p id="run_footer"></p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" id="guide"> 
+				<span id="guide_div"></span><br>
+				<span id="guide_footer"></span><br>
+				<span id="guide_br"></span>
+				<span class="btn_next_fix">
+				<a href="http://widit.knu.ac.kr/~hyj9785/ithw/download.html"><button class="btn_next next"><b>NEXT</b></button></a>
+				</span>
+			</td>
+		</tr>
+	</table>
+</div>
+<style>
+	.footer_div {
+		background-color: #ddd;
+		color: black;
+		width : 600px;
+		height : 80px;
+		margin-left: 50px;
+		padding : 10px;
+	}
+</style>
+
+<script>
+$(document).ready(function(){
+	$("#div").click(function(){
+		$("#text_div").text("<div class='footer_container'>");
+		$("#run_div").addClass("footer_div");
+		$("#guide_div").text("<div>는 내용을 담을 수 있는 상자입니다. footer_container라는 이름의 상자를 만들어주세요.");
+    });
+	$("#div1").click(function(){
+		$("#text_div1").text("</div>");
+    });
+	$("#footer").click(function(){
+		$("#text_footer").text("<footer>Copyright © EduCo.Recommend Chrome for this page.");
+		$("#run_footer").html("<footer>Copyright © EduCo.Recommend Chrome for this page.</footer>");
+		$("#guide_footer").text("<footer>에 copyright를 적어주세요.");
+    });
+	$("#footer1").click(function(){
+		$("#text_footer1").text("</footer>");
+    });
+	$("#br").click(function(){
+		$("#text_footer").text("<footer>Copyright © EduCo.<br>Recommend Chrome for this page.");
+		$("#run_footer").html("<footer>Copyright © EduCo.<br>Recommend Chrome for this page.</footer>");
+		$("#guide_br").text("<br>를 이용하여 text의 줄을 바꾸세요.");
+    });
+	
+});
+</script>
+</body>
+</html> 

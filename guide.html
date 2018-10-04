@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.body-container{
+  height:1000px;
+  margin-right:200px;
+  margin-left:200px;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.flex-container1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 70px;
+  margin: 10px;
+  text-align: center;
+  line-height: 10px;
+  font-size: 20px;
+}
+
+.flex-container1 > div {
+  background-color: #f1f1f1;
+  width: 70px;
+  margin: 10px;
+  text-align: center;
+  line-height: 15px;
+  font-size: 20px;
+}
+.font{
+  font-size: 18px;
+  color:white;
+}
+h3{
+  padding-top:25px;
+  color:white;
+}
+h1{
+  color:#2F4661;
+}
+
+.btn_next {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+	border-radius: 15px;
+}
+
+
+.next {
+    background-color: #2F4661;
+    color: white;
+    border: 2px solid #fff;
+}
+
+.next:hover {
+    background-color: #fff;
+    color: #2F4661;
+}
+.btn_next_fix{
+	padding-right: 40px;
+	padding-bottom: 40px;
+	float: right;
+}
+
+</style>
+
+</head>
+<body>
+  <div class="body-container">
+    <br>
+    <br>
+  <center><h1>PREVIEW</h1></center><br>
+
+  <div class="flex-container">
+    <div style="flex-grow: 1"><img src="head.png" width="300px;"></div>
+    <div style="flex-grow: 2; background-color:#2F4661">
+      <h3>1단계</h3>
+      <p class="font">제목 입력하는 곳으로, h1태그와 p태그를 연습해봅니다.</p>
+    </div>
+  </div>
+  <div class="flex-container1">
+    <div style="flex-grow: 1"><img src="list.png" width="300px;"></div>
+    <div style="flex-grow: 2 ; background-color:#2F4661">
+      <h3>2단계</h3>
+      <p class="font">캐릭터 리스트를 입력하는 곳으로, <br><br>h2태그와 p태그 그리고 ul/li태그를 연습해봅니다.</p>
+    </div>
+  </div>
+  <div class="flex-container1">
+    <div style="flex-grow: 1"><img src="table.png" width="300px;"></div>
+    <div style="flex-grow: 2 ; background-color:#2F4661">
+      <h3>3단계</h3>
+      <p class="font">캐릭터 소개를 입력하는 곳으로, <br><br>table태그와 img태그를 연습해봅니다.</p></div> 
+  </div>
+  <div class="flex-container1">
+    <div style="flex-grow: 1"><img src="video.png" width="300px;"></div>
+    <div style="flex-grow: 2; background-color:#2F4661">
+      <h3>4단계</h3>
+      <p class="font">캐릭터 홍보를 입력하는 곳으로, <br><br>h2태그와 p태그 그리고 video태그를 연습해봅니다.</p></div> 
+    </div>
+  <div class="flex-container">
+    <div style="flex-grow: 1"><img src="footer.png" width="300px;"></div>
+    <div style="flex-grow: 2; background-color:#2F4661">
+      <h3>5단계</h3>
+      <p class="font">저작과 관련된 내용을 입력하는 곳으로, <br><br>footer태그와 br태그를 연습해봅니다.</p></div> </div>
+  </div>
+</div>
+    <div class="btn_next_fix">
+		<a href="http://widit.knu.ac.kr/~hyj9785/ithw/intro.html"><button class="btn_next next"><b>NEXT</b></button></a>
+		</div>
+
+</body>
+</html>

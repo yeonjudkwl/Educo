@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+/* Fixed sidenav, full height */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#EFE6E0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #EFE6E0;
+	margin-left: 20px;
+	margin-top: 5px;
+	margin-bottom: 8px;
+}
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #2F4661;
+  background-color:#F9D3A5;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.button:active {
+  background-color: #F9D3A5;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #2F4661;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.btn:active {
+  background-color: #303846;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+#text {
+	border-right : 2px solid #ddd;
+	width : 1000px;
+	height : 550px;
+	background-color: #303846;
+	color : #fff;
+	font-size: 20px;
+}
+#run {
+	width : 1000px;
+	height : 550px;
+	background-color: #303846;
+	color : #fff;
+}
+#guide {
+	height : 186px;
+	background-color: #2F4661;
+	color : #fff;
+	padding-left : 50px;
+}
+.body{
+	margin-left: 200px;
+}
+a {
+    text-decoration: none;
+}
+.btn_next {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+	border-radius: 15px;
+}
+
+
+.next {
+    background-color: #2F4661;
+    color: white;
+    border: 2px solid #fff;
+}
+
+.next:hover {
+    background-color: #fff;
+    color: #2F4661;
+}
+.btn_next_fix{
+	padding-right: 20px;
+	float: right;
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <button class="btn_drop button">html</button>
+  <div class="dropdown-container">
+    <button class="btn" id="html">html</button>
+    <button class="btn" id="html1">/html</button>
+  </div>
+  <button class="btn_drop button">head</button>
+  <div class="dropdown-container">
+    <button class="btn" id="head">head</button>
+    <button class="btn" id="head1">/head</button>
+  </div>
+  <button class="btn_drop button">style</button>
+  <div class="dropdown-container">
+    <button class="btn" id="style">style</button>
+    <button class="btn" id="style1">/style</button>
+  </div>
+  <button class="btn_drop button">body</button>
+  <div class="dropdown-container">
+    <button class="btn" id="body">body</button>
+    <button class="btn" id="body1">/body</button>
+  </div>
+ </div>
+ 
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("btn_drop");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+
+<div class="body container">
+	<table>
+		<tr>
+			<td id="text">
+				<span id="text_html"></span><br><br>
+				<span>&nbsp;&nbsp;</span><span id="text_head"></span><br><br>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="text_style"></span><br><br>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="text_style1"></span><br><br>
+				<span>&nbsp;&nbsp;</span><span id="text_head1"></span><br><br><br>
+				<span>&nbsp;&nbsp;</span><span id="text_body"></span><br><br>
+				<span>&nbsp;&nbsp;</span><span id="text_body1"></span><br><br>
+				<span id="text_html1"></span>
+			</td>
+			
+			<td id="run">
+				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" id="guide"> 
+				<span>
+				<span id="guide_html"></span><br>
+				<span id="guide_head"></span><br>
+				<span id="guide_style"></span><br>
+				<span id="guide_body"></span>
+				</span>
+				<span class="btn_next_fix">
+				<a href="http://widit.knu.ac.kr/~hyj9785/ithw/head.html"><button class="btn_next next"><b>NEXT</b></button></a>
+				</span>
+						
+			</td>
+		</tr>
+	</table>
+</div>
+
+<script>
+$(document).ready(function(){
+	$("#html").click(function(){
+		$("#text_html").text("<html>");
+		$("#guide_html").text("<html>은 코드 전체를 감싸는 테그입니다. 처음과 마지막에 입력해주세요");
+    });
+	$("#html1").click(function(){
+		$("#text_html1").text("</html>");
+    });
+	$("#head").click(function(){
+		$("#text_head").text("<head>");
+		$("#guide_head").text("<head>는 css코드를 입력하는 부분입니다.");
+    });
+	$("#head1").click(function(){
+		$("#text_head1").text("</head>");
+    });
+	$("#style").click(function(){
+		$("#text_style").text("<style>");
+		$("#guide_style").text("<head>테그 안에 <style>테그를 입력해주세요. <style>테그 안에서 색상 및 사이즈 등을 바꿔주는 테그를 사용할 수 있습니다.");
+    });
+	$("#style1").click(function(){
+		$("#text_style1").text("</style>");
+    });
+	$("#body").click(function(){
+		$("#text_body").text("<body>");
+		$("#guide_body").text("<body>테그 안에 페이지 내용을 입력해주세요.");
+    });
+	$("#body1").click(function(){
+		$("#text_body1").text("</body>");
+    });
+	
+});
+</script>
+</body>
+</html> 

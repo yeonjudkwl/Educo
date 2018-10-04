@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+/* Fixed sidenav, full height */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#EFE6E0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #EFE6E0;
+	margin-left: 20px;
+	margin-top: 5px;
+	margin-bottom: 8px;
+}
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #2F4661;
+  background-color:#F9D3A5;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.button:active {
+  background-color: #F9D3A5;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #2F4661;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.btn:active {
+  background-color: #303846;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+.heading1, .box_div, .text1, .list1{
+	margin-bottom : 10px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+#text {
+	border-right : 2px solid #ddd;
+	width : 500px;
+	height : 550px;
+	background-color: #303846;
+	color : #fff;
+	font-size: 18px;
+}
+#run {
+	width : 800px;
+	height : 550px;
+	background-color: #303846;
+	color : #fff;
+}
+#guide {
+	height : 186px;
+	background-color: #2F4661;
+	color : #fff;
+	padding-left : 50px;
+}
+.body{
+	margin-left: 200px;
+}
+a {
+    text-decoration: none;
+}
+.btn_next {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+	border-radius: 15px;
+}
+
+
+.next {
+    background-color: #2F4661;
+    color: white;
+    border: 2px solid #fff;
+}
+
+.next:hover {
+    background-color: #fff;
+    color: #2F4661;
+}
+.btn_next_fix{
+	padding-right: 20px;
+	float: right;
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+ <div>
+	<button class="btn_drop button">box</button>
+	  <div class="dropdown-container">
+		<div class="box_block">
+			<div class="box_div">
+				<button class="btn"id="div">div</button>
+				<button class="btn" id="div1">/div</button>
+			</div>
+		</div>
+	  </div>
+	</div>
+  
+  <button class="btn_drop button">heading</button>
+  <div class="dropdown-container">
+	<div class="heading1">
+		<button class="btn" id="h2">h2</button>
+		<button class="btn" id="h21">/h2</button>
+	</div>
+	</div>
+  <div>
+	<button class="btn_drop button">box</button>
+	  <div class="dropdown-container">
+		<div class="box_block">
+			<div class="box_p">
+				<button class="btn" id="p">p</button>
+				<button class="btn" id="p1">/p</button>
+			</div>
+		</div>
+	  </div>
+	</div>
+	<button class="btn_drop button">heading</button>
+  <div class="dropdown-container">
+		<button class="btn" id="h5">h5</button>
+		<button class="btn" id="h51">/h5</button>
+  </div>
+  
+ <div>
+  <button class="btn_drop button">list</button>
+  <div class="dropdown-container">
+	<div class="list">
+		<div class="list1">
+			<span class="list_ul">
+				<button class="btn" id="ul">ul</button>
+				<button class="btn" id="ul1">/ul</button>
+			</span>
+		</div>
+		<span class="list_li">
+			<button class="btn"id="li">li</button>
+			<button class="btn" id="li1">/li</button><br>
+			<button class="btn"id="li2">li</button>
+			<button class="btn" id="li21">/li</button><br>
+			<button class="btn"id="li3">li</button>
+			<button class="btn" id="li31">/li</button>
+		</span>
+	</div>
+  </div>
+ </div>
+ <div>
+  <button class="btn_drop button">text</button>
+  <div class="dropdown-container">
+	<div class="text">
+		<div class="text1">
+			<span class="text_b">
+				<button class="btn" id="b">b</button>
+				<button class="btn" id="b1">/b</button>
+			</span>
+		</div>
+			<span class="text_i">
+				<button class="btn" id="i">i</button>
+				<button class="btn" id="i1">/i</button>
+			</span>
+	</div>
+  </div>
+ </div>
+</div>
+ 
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("btn_drop");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+
+<div class="body container">
+	<table>
+		<tr>
+			<td id="text">
+				<p id="text_div"></p>
+				<span>&nbsp;&nbsp;</span><span id="text_h2"></span>
+				<span id="text_h21"></span><br>
+				<span>&nbsp;&nbsp;</span><span id="text_p"></span>
+				<span id="text_p1"></span><br><br>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="text_h5"></span>
+				<span id="text_h51"></span><br>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="text_ul"></span><br>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="text_li"></span>
+				<span id="text_li1"></span><br>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="text_li2"></span>
+				<span id="text_li21"></span><br>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="text_li3"></span>
+				<span id="text_li31"></span><br>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="text_ul1"></span>
+				<p id="text_div1"></p>
+			</td>
+			
+			<td id="run">
+				<div id="run_div">
+				<p id="run_h2"></p>
+				<p id="run_p"></p>
+				<p id="run_h5"></p>
+				<p id="run_li"></p>
+				<p id="run_li2"></p>
+				<p id="run_li3"></p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" id="guide"> 
+				<span id="guide_div"></span><br>
+				<span id="guide_h2"></span><br>
+				<span id="guide_p"></span><br>
+				<span id="guide_h5"></span><br>
+				<span id="guide_ul"></span><br>
+				<span id="guide_li"></span><br>
+				<span id="guide_b"></span><br>
+				<span id="guide_i"></span>
+				<span class="btn_next_fix">
+				<a href="http://widit.knu.ac.kr/~hyj9785/ithw/table.html"><button class="btn_next next"><b>NEXT</b></button></a>
+				</span>
+			</td>
+		</tr>
+	</table>
+</div>
+<style>
+	.list_div {
+		border: 1px solid #fff;
+		background-color: #fff;
+		color: #2F4661;
+		width : 600px;
+		height : 300px;
+		margin-left: 50px;
+		padding : 10px;
+	}
+</style>
+
+<script>
+$(document).ready(function(){
+	$("#div").click(function(){
+		$("#text_div").text("<div class='list_container'>");
+		$("#run_div").addClass("list_div");
+		$("#guide_div").text("<div>는 내용을 담을 수 있는 상자입니다. list_container라는 이름의 상자를 만들어주세요.");
+    });
+	$("#div1").click(function(){
+		$("#text_div1").text("</div>");
+    });
+	$("#h2").click(function(){
+		$("#text_h2").text("<h2>KAKAO INTRODUCTION");
+		$("#run_h2").html("<h2>KAKAO INTRODUCTION</h2>");
+		$("#guide_h2").text("<h2>를 이용하여 소제목을 적어주세요.");
+    });
+	$("#h21").click(function(){
+		$("#text_h21").text("</h2>");
+    });
+	$("#p").click(function(){
+		$("#text_p").text("<p>카카오톡과 카카오스토리에서 사용할 수 있는 이모티콘 캐릭터들의 이름이며 사실상 카카오의 마스코트들이다. ");
+		$("#run_p").html("<p>카카오톡과 카카오스토리에서 사용할 수 있는 이모티콘 캐릭터들의 이름이며 사실상 카카오의 마스코트들이다.</p>");
+		$("#guide_p").text("<p>테그로 평서문을 적을 수 있습니다. <p>를 이용하여 설명을 적어주세요.");
+    });
+	$("#p1").click(function(){
+		$("#text_p1").text("</p>");
+    });
+	$("#h5").click(function(){
+		$("#text_h5").text("<h5>-캐릭터 리스트-");
+		$("#run_h5").html("<h5>-캐릭터 리스트-</h2>");
+		$("#guide_h5").text("<h5>를 이용하여 리스트 제목을 적어주세요.");
+    });
+	$("#h51").click(function(){
+		$("#text_h51").text("</h5>");
+    });
+	$("#ul").click(function(){
+		$("#text_ul").text("<ul>");
+		$("#guide_ul").text("<ul>테그는 번호가 없는 리스트를 작성합니다.");
+    });
+	$("#ul1").click(function(){
+		$("#text_ul1").text("</ul>");
+    });
+	$("#li").click(function(){
+		$("#text_li").text("<li>RYAN 입니다.");
+		$("#run_li").html("<li>RYAN 입니다.</li>");
+		$("#guide_li").text("<li>테그로 리스트를 작성할 수 있습니다.");
+    });
+	$("#li1").click(function(){
+		$("#text_li1").text("</li>");
+    });
+	$("#li2").click(function(){
+		$("#text_li2").text("<li>APEACH 입니다.");
+		$("#run_li2").html("<li>APEACH 입니다.</li>");
+    });
+	$("#li21").click(function(){
+		$("#text_li21").text("</li>");
+    });
+	$("#li3").click(function(){
+		$("#text_li3").text("<li>MUZI&CON 입니다.");
+		$("#run_li3").html("<li>MUZI&CON 입니다.</li>");
+    });
+	$("#li31").click(function(){
+		$("#text_li31").text("</li>");
+    });
+	$("#b").click(function(){
+		$("#text_li").text("<li><b>RYAN");
+		$("#guide_b").text("<b>테그로 text를 굵게할 수 있습니다.");
+    });
+	$("#b1").click(function(){
+		$("#text_li").text("<li><b>RYAN</b> 입니다.");
+		$("#run_li").html("<li><b>RYAN</b> 입니다.</li>");
+    });
+	$("#i").click(function(){
+		$("#text_li2").text("<li><i>APEACH");
+		$("#guide_i").text("<i>테그로 text를 기울일 수 있습니다.");
+    });
+	$("#i1").click(function(){
+		$("#text_li2").text("<li><i>APEACH</i> 입니다.");
+		$("#run_li2").html("<li><i>APEACH</i> 입니다.</li>");
+    });
+	
+});
+</script>
+</body>
+</html> 
